@@ -21,19 +21,19 @@ int main(){
     printf("\n");
     }
 
-
-    for(int j=0;j<m;j++){
-            x=0;
-        for(int i=0;i<n;i++){
-         x=x+ arr[i][j];
-          }
-          if(x>max){
-          max=x;
-          y=j;
-          }
+    int i=0;
+    int j=n-1;
+    while(i<n && j>=0){
+        if(arr[i][j]==1){
+            max=i;
+            j--;
         }
+        else{
+            i++;
+        }    
+    }
 
-    printf("The row with max no. of 1 is %d \n",y+1);
+    printf("The row with max no. of 1 is %d \n",max);
     return 0;
 }
 
